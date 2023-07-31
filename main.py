@@ -11,7 +11,7 @@ a = Form('velocity', r"\alpha")    # a form is a variable
 b = Form('vorticity', r'\omega')
 c = Form('pressure', r'\nabla P')
 
-form_pr()   # plot all forms
+form_pr(locals())   # plot all forms
 
 expression = [    # the expressions of the PDE
     'a + b = 0',

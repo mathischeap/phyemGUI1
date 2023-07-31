@@ -22,12 +22,17 @@ class Form(object):
         _global_forms[id(self)] = self
 
 
-def pr(figsize=(8, 6)):
+def pr(variable_dict, figsize=(8, 6)):
     """print all forms"""
     text = ''
     for form_id in _global_forms:
         form = _global_forms[form_id]
-        text += form._lin_repr + ': $' + form._sym_repr + '$\n'
+        label = None
+        for label in variable_dict:
+            if variable_dict[label] is form:
+                break
+
+        text += r'\texttt{' + label + '}:  ' + form._lin_repr + ' = $' + form._sym_repr + '$\n'
 
     fig = plt.figure(figsize=figsize)
     plt.axis([0, 1, 0, 1])
