@@ -12,6 +12,8 @@ matplotlib.use('TkAgg')
 _global_forms = {}  # cache all forms
 
 
+# here we make some changes for the test
+
 class Form(object):
     """"""
 
